@@ -17,18 +17,18 @@ export default class Media extends PureComponent {
   //   }
   // //   this.handleClick = this.handleClick.bind(this)
   // }
-  handleClick = (event) => {
-    // console.log(this.props.title);
-    this.setState({
-      author: 'Lujiño el pegadiño'
-    })
-  }
+  // handleClick = (event) => {
+  //   // console.log(this.props.title);
+  //   this.setState({
+  //     author: 'Lujiño el pegadiño'
+  //   })
+  // }
 
   render() {
     const { title, author, cover } = this.props
 
     return (
-      <div className="Media" onClick={this.handleClick}>
+      <div className="Media" onClick={this.props.handleClick}>
         <div className="Media-cover">
           <img
             className=""

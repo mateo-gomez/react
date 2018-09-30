@@ -1,5 +1,5 @@
 import React from 'react'
-import Playlist from '../../components/playlist'
+import Playlist from '../../playlist/components/playlist'
 import './category.css'
 
 export default function Category(props) {
@@ -8,6 +8,7 @@ export default function Category(props) {
       <p className="Category-description">{props.description}</p>
       <h2 className="Category-title">{props.title}</h2>
       <Playlist
+        handleOpenModal={props.handleOpenModal}
         Playlist={props.playlist}
       />
     </div>

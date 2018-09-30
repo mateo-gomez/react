@@ -10,7 +10,7 @@ export default function Playlist(props) {
       {
         // console.log(props)
         props.Playlist.map((item) => {
-          return <Media {...item} key={item.id} />
+          return <Media handleClick={props.handleOpenModal} {...item} key={item.id} />
         })
       }
     </div>

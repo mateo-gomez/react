@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js'
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
