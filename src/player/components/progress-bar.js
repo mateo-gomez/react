@@ -3,11 +3,13 @@ import './progress-bar.css'
 
 export default function ProgressBar (props) {
   return (
-    <div>
+    <div className="ProgressBar">
       <input
         type="range"
         min={0}
-        max={500}
+        max={props.duration}
+        value={props.currentTime}
+        onChange={props.handleProgressChange}
       />
     </div>
   );

@@ -11,7 +11,7 @@ export default class Video extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.pause !== this.props.pause) {
-      this.togglePlay(  )
+      this.togglePlay()
     }
   }
   setRef = element => {
@@ -20,7 +20,9 @@ export default class Video extends Component {
   render () {
     const {
       handleLoadedMetada,
-      handleTimeUpdate
+      handleTimeUpdate,
+      handleSeeking,
+      handleseeked
     } = this.props
     return (
       <div className="Video">
@@ -30,6 +32,8 @@ export default class Video extends Component {
           ref={this.setRef}
           onLoadedMetadata={handleLoadedMetada}
           onTimeUpdate={handleTimeUpdate}
+          onSeeking={handleSeeking}
+          onSeeked={handleseeked}
         />
       </div>
     )

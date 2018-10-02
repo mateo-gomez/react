@@ -9,11 +9,12 @@ import VideoPlayer from '../../player/containers/video-player'
 
 export default class Home extends Component {
   state = {
-    modalVisible: false,
+    modalVisible: false
   }
-  handleOpenModal = () => {
+  handleOpenModal = (media) => {
     this.setState({
-      modalVisible: true
+      modalVisible: true,
+      media
     })
   }
   handleCloseModal = (event) => {
@@ -29,9 +30,6 @@ export default class Home extends Component {
         <Related
           categories={this.props.data.categories}
         />
-        <VideoPlayer
-          autoplay={false}
-        />
         <Categories categories={this.props.data.categories}
           handleOpenModal={this.handleOpenModal}
         />
@@ -41,7 +39,11 @@ export default class Home extends Component {
             <Modal
               handleClick={this.handleCloseModal}
             >
-              <h1>esto es un portal</h1>
+              <VideoPlayer
+                autoplay
+                src={this.state.media.src}
+                title={this.state.media.title}
+              />
             </Modal>
           </ModalContainer>
         }

@@ -17,27 +17,23 @@ export default class Media extends PureComponent {
   //   }
   // //   this.handleClick = this.handleClick.bind(this)
   // }
-  // handleClick = (event) => {
-  //   // console.log(this.props.title);
-  //   this.setState({
-  //     author: 'Lujiño el pegadiño'
-  //   })
-  // }
+  handleClick = (event) => {
+    // console.log(this.props.title);
+    this.props.openModal(this.props)
+  }
 
   render() {
-    const { title, author, cover } = this.props
-
     return (
-      <div className="Media" onClick={this.props.handleClick}>
+      <div className="Media" onClick={this.handleClick}>
         <div className="Media-cover">
           <img
             className=""
-            src={cover}
+            src={this.props.cover}
             width={260}
             height={160}
           />
         </div>
-        <h3 className="Media-title ">{title}</h3>
+        <h3 className="Media-title ">{this.props.title}</h3>
         <p className="Media-author">{this.props.author}</p>
       </div>
     )
