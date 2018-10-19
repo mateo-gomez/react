@@ -1,0 +1,23 @@
+dependencias para iniciar proyecto con react
+  $ npm i -S react react-dom
+  $ npm i -D webpack webpack-cli webpack-dev-server @babel/preset-react
+
+para cargar estilos css dentro de la etiqueta head en html
+  $ npm i -D style-loader css-loader
+  
+  css-loader interpreta el archivo css importado desde el archivo js
+  style-loader imprime el css en la etiqueta head
+  
+Si se quiere tener un archivo a parte con el css se debe instalar extract-text-webpack-plugin
+  $ npm i -D extract-text-webpack-plugin@next
+  
+  en el archivo webpack.config.js se debe incluir la linea
+  const extractTextPlugin = require('extract-text-webpack-plugin')
+  (...)
+  plugins: [
+    new extractTextPlugin('css/[name].css')
+  ]
+  (*En este caso ya no es necesario el style-loader)
+  
+Para que webpack entienda código escrito en ES6 y que se pueda importar otros modulos se debe instalar babel loader
+  $ npm install -D babel-loader@7 babel-core babel-preset-env
