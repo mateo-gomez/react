@@ -20,4 +20,4 @@ Si se quiere tener un archivo a parte con el css se debe instalar extract-text-w
   (*En este caso ya no es necesario el style-loader)
   
 Para que webpack entienda código escrito en ES6 y que se pueda importar otros modulos se debe instalar babel loader
-  $ npm install -D babel-loader@7 babel-core babel-preset-env
+  $ npm install -D babel-loader @babel/core @babel/preset-env
